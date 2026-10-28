@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SmolVLM ScienceQA examples</title>
+<style>
+:root{--bg:#fcfcfb;--card:#ffffff;--ink:#0b0b0b;--muted:#52514e;--line:#e4e3df;--bar:#c9dcf5;--pick:#2a78d6;--good:#0a7a3e;--bad:#c4281c}
+@media (prefers-color-scheme:dark){:root{--bg:#1a1a19;--card:#232321;--ink:#ffffff;--muted:#c3c2b7;--line:#3a3a37;--bar:#27415f;--pick:#3987e5;--good:#4cc38a;--bad:#ff8a80}}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:24px 16px}
+h1{font-size:22px;margin:0 0 4px}.sub{color:var(--muted);margin:0 0 16px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+button{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 12px;border-radius:8px;cursor:pointer;font:inherit}
+button[aria-pressed=true]{border-color:var(--pick);outline:1px solid var(--pick)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}
+.card img{width:100%;max-height:220px;object-fit:contain;background:#fff;border-radius:8px}
+.meta{color:var(--muted);font-size:12px;margin:8px 0 2px}.q{font-weight:600;margin:2px 0 6px}.hint{color:var(--muted);font-size:13px;margin:0 0 8px}
+.opt{position:relative;border:1px solid var(--line);border-radius:8px;margin:4px 0;padding:5px 8px;overflow:hidden}
+.opt i{position:absolute;inset:0 auto 0 0;background:var(--bar);z-index:0}.opt span{position:relative;z-index:1;display:flex;justify-content:space-between;gap:8px}
+.opt.pick{border-color:var(--pick);border-width:2px}
+.verdict{margin-top:8px;font-weight:600}.ok{color:var(--good)}.no{color:var(--bad)}
+</style></head><body><main>
+<h1>SmolVLM-256M ScienceQA decision model: live examples</h1>
+<p class="sub" id="sub"></p>
+<div class="bar" id="bar"></div>
+<div class="grid" id="grid"></div>
+<p class="sub" style="margin-top:20px">Questions and images from <a href="https://scienceqa.github.io/" style="color:inherit">ScienceQA</a> (Lu et al., 2022), CC BY-NC-SA 4.0.</p>
+</main>
+<script>
+const DATA = __DATA__;
+const L = "ABCDE";
+let mode = "all";
+function esc(s){return String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
+function card(e){
+  const ok = e.choice === e.answer;
+  const opts = e.choices.map((c,i) => `<div class="opt ${i===e.choice?"pick":""}"><i style="width:${(e.probabilities[i]*100).toFixed(1)}%"></i>
+    <span><b>${L[i]})</b> <em style="flex:1;font-style:normal">${esc(c)}${i===e.answer?" &#10003;":""}</em><b>${(e.probabilities[i]*100).toFixed(1)}%</b></span></div>`).join("");
+  const verdict = ok ? `<div class="verdict ok">&#10003; chose ${L[e.choice]} - correct</div>`
+                     : `<div class="verdict no">&#10007; chose ${L[e.choice]} - correct answer is ${L[e.answer]}</div>`;
+  return `<div class="card" data-ok="${ok}"><img alt="question image" src="data:image/jpeg;base64,${e.image}">
+    <div class="meta">${esc(e.subject)} &middot; ${esc(e.grade)} &middot; test row ${e.test_index}</div>
+    <div class="q">${esc(e.question)}</div>${e.hint ? `<p class="hint">${esc(e.hint)}</p>` : ""}${opts}${verdict}</div>`;
+}
+function render(){
+  const list = DATA.examples.filter(e => mode === "all" || (mode === "right") === (e.choice === e.answer));
+  document.getElementById("grid").innerHTML = list.map(card).join("");
+  document.querySelectorAll("#bar button").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode === mode));
+}
+document.getElementById("sub").textContent = DATA.summary;
+document.getElementById("bar").innerHTML = ["all","right","wrong"].map(m => `<button data-mode="${m}">${m}</button>`).join("");
+document.querySelectorAll("#bar button").forEach(b => b.onclick = () => { mode = b.dataset.mode; render(); });
+render();
+</script></body></html>

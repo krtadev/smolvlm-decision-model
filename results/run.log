@@ -1,0 +1,132 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[   0.7 min] rows with images: {'train': 6218, 'validation': 2097, 'test': 2017}
+Loading weights:   0%|          | 0/471 [00:00<?, ?it/s]Loading weights:  61%|██████    | 285/471 [00:00<00:00, 2848.60it/s]Loading weights: 100%|██████████| 471/471 [00:00<00:00, 2975.65it/s]
+[   0.8 min] space letters: {'A': 330, 'B': 389, 'C': 340, 'D': 422, 'E': 414}
+[   0.9 min] zero-shot val subset, image side 512, space letters: accuracy 0.3620
+[   0.9 min] using image side 512 with space letters
+[   1.0 min] space letters: {'A': 330, 'B': 389, 'C': 340, 'D': 422, 'E': 414}
+[   1.0 min] example prompt: "<|im_start|>User:<image>Context: People can use the engineering-design process to develop solutions to problems. One step in the process is testing if a potential solution meets the requirements of the design.\nThe passage below describes how the engineering-design process was used to test a solution to a problem. Read the passage. Then answer the question below.\n\nGordon was an aerospace engineer who was developing a parachute for a spacecraft that would land on Mars. He needed to add a vent at the center of the parachute so the spacecraft would land smoothly. However, the spacecraft would have to travel at a high speed before landing. If the vent was too big or too small, the parachute might swing wildly at this speed. The movement could damage the spacecraft.\nSo, to help decide how big the vent should be, Gordon put a parachute with a 1 m vent in a wind tunnel. The wind tunnel made it seem like the parachute was moving at 200 km per hour. He observed the parachute to see how much it swung.\nFigure: a spacecraft's parachute in a wind tunnel.\nQuestion: Which of the following could Gordon's test show?\nA) if the spacecraft was damaged when using a parachute with a 1 m vent going 200 km per hour   B) how steady a parachute with a 1 m vent was at 200 km per hour   C) whether a parachute with a 1 m vent would swing too much at 400 km per hour\nAnswer:<end_of_utterance>\nAssistant:"
+[   1.5 min] test order seed 0: accuracy 0.3897
+[   2.0 min] test order seed 1: accuracy 0.3832
+[   2.6 min] test order seed 2: accuracy 0.3713
+[   3.2 min] test with blank images: accuracy 0.3823
+trainable params: 4,884,480 || all params: 261,369,408 || trainable%: 1.8688
+[   3.2 min] training up to 1552 steps (4 epochs)
+[   3.4 min] step 20/1552 loss 1.6653 lr 1.00e-04
+[   3.5 min] step 40/1552 loss 1.1482 lr 9.89e-05
+[   3.7 min] step 60/1552 loss 0.9870 lr 9.77e-05
+[   3.8 min] step 80/1552 loss 0.9560 lr 9.65e-05
+[   4.0 min] step 100/1552 loss 0.8098 lr 9.54e-05
+[   4.2 min] step 100: validation-subset loss 0.8432 accuracy 0.6180
+[   4.3 min] step 120/1552 loss 0.7416 lr 9.42e-05
+[   4.5 min] step 140/1552 loss 0.7007 lr 9.30e-05
+[   4.7 min] step 160/1552 loss 0.6994 lr 9.18e-05
+[   4.8 min] step 180/1552 loss 0.5726 lr 9.07e-05
+[   5.0 min] step 200/1552 loss 0.6586 lr 8.95e-05
+[   5.2 min] step 200: validation-subset loss 0.6426 accuracy 0.6860
+[   5.3 min] step 220/1552 loss 0.5839 lr 8.83e-05
+[   5.5 min] step 240/1552 loss 0.5431 lr 8.71e-05
+[   5.7 min] step 260/1552 loss 0.5802 lr 8.60e-05
+[   5.8 min] step 280/1552 loss 0.5529 lr 8.48e-05
+[   6.0 min] step 300/1552 loss 0.5062 lr 8.36e-05
+[   6.2 min] step 300: validation-subset loss 0.6722 accuracy 0.7080
+[   6.3 min] step 320/1552 loss 0.5199 lr 8.24e-05
+[   6.5 min] step 340/1552 loss 0.4782 lr 8.13e-05
+[   6.6 min] step 360/1552 loss 0.4585 lr 8.01e-05
+[   6.8 min] step 380/1552 loss 0.5157 lr 7.89e-05
+[   7.0 min] step 400/1552 loss 0.5012 lr 7.77e-05
+[   7.1 min] step 400: validation-subset loss 0.5815 accuracy 0.7360
+[   7.3 min] step 420/1552 loss 0.4474 lr 7.66e-05
+[   7.5 min] step 440/1552 loss 0.4942 lr 7.54e-05
+[   7.6 min] step 460/1552 loss 0.4346 lr 7.42e-05
+[   7.8 min] step 480/1552 loss 0.4627 lr 7.30e-05
+[   8.0 min] step 500/1552 loss 0.4592 lr 7.19e-05
+[   8.1 min] step 500: validation-subset loss 0.5374 accuracy 0.7600
+[   8.3 min] step 520/1552 loss 0.4238 lr 7.07e-05
+[   8.5 min] step 540/1552 loss 0.4337 lr 6.95e-05
+[   8.6 min] step 560/1552 loss 0.3841 lr 6.83e-05
+[   8.8 min] step 580/1552 loss 0.4242 lr 6.72e-05
+[   8.9 min] step 600/1552 loss 0.4134 lr 6.60e-05
+[   9.1 min] step 600: validation-subset loss 0.6264 accuracy 0.7480
+[   9.3 min] step 620/1552 loss 0.3749 lr 6.48e-05
+[   9.4 min] step 640/1552 loss 0.4141 lr 6.36e-05
+[   9.6 min] step 660/1552 loss 0.4537 lr 6.25e-05
+[   9.8 min] step 680/1552 loss 0.4050 lr 6.13e-05
+[   9.9 min] step 700/1552 loss 0.4888 lr 6.01e-05
+[  10.1 min] step 700: validation-subset loss 0.5451 accuracy 0.7580
+[  10.2 min] step 720/1552 loss 0.3686 lr 5.89e-05
+[  10.4 min] step 740/1552 loss 0.3909 lr 5.78e-05
+[  10.6 min] step 760/1552 loss 0.4338 lr 5.66e-05
+[  10.7 min] step 780/1552 loss 0.4199 lr 5.54e-05
+[  10.9 min] step 800/1552 loss 0.3684 lr 5.42e-05
+[  11.1 min] step 800: validation-subset loss 0.5898 accuracy 0.7600
+[  11.2 min] step 820/1552 loss 0.3739 lr 5.31e-05
+[  11.4 min] step 840/1552 loss 0.3121 lr 5.19e-05
+[  11.5 min] step 860/1552 loss 0.3939 lr 5.07e-05
+[  11.7 min] step 880/1552 loss 0.3521 lr 4.95e-05
+[  11.9 min] step 900/1552 loss 0.3608 lr 4.84e-05
+[  12.0 min] step 900: validation-subset loss 0.5469 accuracy 0.7880
+[  12.2 min] step 920/1552 loss 0.3557 lr 4.72e-05
+[  12.3 min] step 940/1552 loss 0.3428 lr 4.60e-05
+[  12.5 min] step 960/1552 loss 0.3342 lr 4.48e-05
+[  12.7 min] step 980/1552 loss 0.3576 lr 4.37e-05
+[  12.8 min] step 1000/1552 loss 0.3574 lr 4.25e-05
+[  13.0 min] step 1000: validation-subset loss 0.5481 accuracy 0.7720
+[  13.0 min] no lower validation-subset loss for 5 checks, stopping early
+[  13.0 min] using the adapter from step 500 (lowest validation-subset loss)
+[  13.5 min] fitted T = 1.3288 on 1597 calibration rows
+[  14.2 min] test order seed 0: accuracy 0.7655
+[  14.8 min] test order seed 1: accuracy 0.7705
+[  15.5 min] test order seed 2: accuracy 0.7561
+[  16.2 min] test with blank images: accuracy 0.5850
+[  16.2 min] done
+{
+  "zero_shot": {
+    "accuracy": 0.3896876573562622,
+    "accuracy_ci95": 0.021283229298814904,
+    "chance_accuracy": 0.35494959510824653,
+    "accuracy_without_image": 0.3822508676251859,
+    "ece": 0.4118937207676936,
+    "nll": 2.1536636352539062,
+    "mean_confidence_right": 0.824212372303009,
+    "mean_confidence_wrong": 0.7871313691139221,
+    "accuracy_by_order_seed": {
+      "0": 0.3896876573562622,
+      "1": 0.3832424283027649,
+      "2": 0.37134358286857605
+    },
+    "T": 1.0
+  },
+  "fine_tuned": {
+    "accuracy": 0.7654933333396912,
+    "accuracy_ci95": 0.01849061795197919,
+    "chance_accuracy": 0.35494959510824653,
+    "accuracy_without_image": 0.585027268220129,
+    "ece": 0.03737229565740563,
+    "nll": 0.5273249745368958,
+    "mean_confidence_right": 0.8466101884841919,
+    "mean_confidence_wrong": 0.5903707146644592,
+    "accuracy_by_order_seed": {
+      "0": 0.7654933333396912,
+      "1": 0.7704511880874634,
+      "2": 0.7560733556747437
+    },
+    "T": 1.0
+  },
+  "fine_tuned_calibrated": {
+    "accuracy": 0.7654933333396912,
+    "accuracy_ci95": 0.01849061795197919,
+    "chance_accuracy": 0.35494959510824653,
+    "accuracy_without_image": 0.585027268220129,
+    "ece": 0.023508241516537964,
+    "nll": 0.5163540244102478,
+    "mean_confidence_right": 0.81572425365448,
+    "mean_confidence_wrong": 0.5492702126502991,
+    "accuracy_by_order_seed": {
+      "0": 0.7654933333396912,
+      "1": 0.7704511880874634,
+      "2": 0.7560733556747437
+    },
+    "T": 1.3288441896438599
+  }
+}

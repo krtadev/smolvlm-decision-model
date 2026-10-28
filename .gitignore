@@ -1,0 +1,4 @@
+# raw runs as downloaded from Colab; make_assets.py copies the chosen one into results/ and model/
+runs/
+__pycache__/
+*.zip

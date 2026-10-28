@@ -1,0 +1,32 @@
+{
+  "chosen": "r16_lr1e-4",
+  "rows": [
+    {
+      "label": "random guess",
+      "value": 0.35494959510824653,
+      "kind": "ref"
+    },
+    {
+      "label": "zero-shot, image blanked",
+      "value": 0.3822508676251859,
+      "kind": "dim"
+    },
+    {
+      "label": "zero-shot",
+      "value": 0.3896876573562622,
+      "ci": 0.021283229298814904,
+      "kind": "main"
+    },
+    {
+      "label": "fine-tuned, image blanked",
+      "value": 0.585027268220129,
+      "kind": "dim"
+    },
+    {
+      "label": "fine-tuned, LoRA rank 16, lr 0.0001",
+      "value": 0.7654933333396912,
+      "ci": 0.01849061795197919,
+      "kind": "main"
+    }
+  ]
+}
